@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"      
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+
+    <h:head>
+        <title>Add Category</title>
+    </h:head>
+    <ui:composition template="/template/plantillaAdmin.xhtml">
+        <ui:define name="left">            
+        </ui:define>
+        <ui:define name="content" >
+            <h:body class="totaltodo">
+                <center>
+                     <br></br> <br></br>
+                    <div class="card p-5" style="width: 50%;height: 50%;">
+                        <h2 class="h2title">Editar Categoría</h2>
+                        <h:form class="container">
+                            <!--              ID Categoría está oculto-->
+                            <h:inputHidden value="#{managedCategoria.categoria.idcategoria}"></h:inputHidden>
+                            <h:panelGrid columns="2" >
+                                <h:outputLabel class="etiquetas" value="#{msj['formCategoria.nombre']}"></h:outputLabel>
+                                <h:inputText value="#{managedCategoria.categoria.nombreCategoria}"></h:inputText>
+                                <h:outputLabel class="etiquetas" value="#{msj['formCategoria.descripcion']}"></h:outputLabel>
+                                <h:inputText value="#{managedCategoria.categoria.descripcionCategoria}"></h:inputText>
+                                <h:outputLabel class="etiquetas" value="#{msj['formCategoria.imagen']}"></h:outputLabel>
+                                <h:inputText value="#{managedCategoria.categoria.imagenCategoria}"></h:inputText>
+                                <center><br/><br/>
+                                <h:commandButton  class="btn btn-success" value="Modificar" 
+                                                  actionListener="#{managedCategoria.modificar()}" 
+                                                  onclick="#{managedCategoria.init()}"
+                                                  action="listarCategoria.xhtml">
+                                </h:commandButton>
+                                </center>
+                                <br/><br/>
+                                
+                            </h:panelGrid>
+                        </h:form>
+                         <h:link value="Regresar" class="btn btn-primary"  outcome="/paginas/admindex.xhtml"></h:link>
+
+                    </div>
+                </center> <br/><br/><br/><br/><br/><br/>
+            </h:body>
+        </ui:define>
+    </ui:composition>
+</html>

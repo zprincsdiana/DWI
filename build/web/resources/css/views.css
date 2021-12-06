@@ -1,0 +1,52 @@
+.totaltodo{
+    	
+  	background-image: 
+	  linear-gradient(to right bottom, 
+     rgba(76, 216, 255, 0.8),
+     rgba(30, 108, 217, 0.8)),
+     url('https://i.pinimg.com/originals/08/55/a7/0855a792bcda54a96c56cea190fb0e45.jpg');
+  	
+	background-size: cover;
+  	background-position: top;
+}
+
+
+.categoria{
+    
+       background: transparent;
+  display:flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+  width:1920px;
+  height: 800px;
+color: #ffffff;
+}
+
+.todoooo{
+    	background-image: 
+	  linear-gradient(to right bottom, 
+     rgba(76, 216, 255, 0.8),
+     rgba(30, 108, 217, 0.8)),
+     url('https://i.pinimg.com/originals/08/55/a7/0855a792bcda54a96c56cea190fb0e45.jpg');
+  	
+	background-size: cover;
+  	background-position: top;
+}
+
+.btn-primary-mary {
+  background-color: #ccc; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;  
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer; 
+  height: 70px;
+  width: 140px;
+  text-decoration: none;
+  border-radius: 15px;
+  
+}

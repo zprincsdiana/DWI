@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"></link>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"></link>
+<!--            Google Fonts-->
+<!--    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide"/>-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sriracha"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Righteous"/>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans" rel="stylesheet"/>
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="/css/estilo.css"></h:outputStylesheet>
+        <h:outputStylesheet name="/css/into.css"/>
+        <h:outputStylesheet name="/css/views.css"/>
+        <title>Facelets Template</title>
+    </h:head>
+
+    <h:body>
+
+        <div class="todo">
+            <div id="left">
+                <ui:insert name="left"></ui:insert>
+            </div>
+            <div id="content" class="left_content">
+                <ui:insert name="content">
+                    
+                </ui:insert>
+            </div>
+        </div>      
+        
+          <div class="footer">
+            <div class="contain">
+                <div class="col">
+                    <h1>Legales</h1>
+                    <ul>
+                        <li>Politica de privacidad</li>
+                        <li>Condiciones de uso</li>
+
+                    </ul>
+                </div>
+
+                <div class="col">
+                    <h1>Nosotros</h1>
+                    <ul>      
+                        <li>Mission</li>
+                        <li>Vision</li>
+                        <li>Razon Social</li>
+                        <li>Nuestra Historia</li>
+
+                    </ul>
+                </div>
+                <div class="col">
+                    <h1>Politicas</h1>
+                    <ul>
+                        <li>Términos y condiciones online</li>
+                        <li>Política de Privacidad</li>
+                        <li>Términos y Condiciones Campaña</li>
+
+                    </ul>
+                </div>
+                <div class="col">
+                    <h1>Soporte</h1>
+                    <ul>
+                        <li>Contactanos</li>
+                        <li>Envianos un mensaje</li>
+                        <li>Abrir reclamo</li>
+                    </ul>
+                </div>
+                <div class="col social">
+                    <h1>Redes Sociales</h1>
+                    <ul>
+                        <li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1024px-Facebook_Logo_%282019%29.png" width="32" style="width: 32px;"></img>  </li>
+                        <li><img src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c53e.png" width="32" style="width: 32px;"></img></li>
+                        <li><img src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c521.png" width="32" style="width: 32px;"></img></li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+
+        </div>
+    </h:body>
+
+</html>

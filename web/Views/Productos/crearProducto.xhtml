@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"      
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+
+    <h:head>
+        <title>Add Category</title>
+    </h:head>
+    <ui:composition template="/template/plantillaAdmin.xhtml">
+        <ui:define name="left">            
+        </ui:define>
+        <ui:define name="content" >
+            <h:body class="totaltodo">
+                <center>
+                    <br></br> <br></br>
+                    <div class="card p-5" style="width: 50%;height: 50%;">
+                        <h2 class="h2title">Agregar Producto</h2>
+                    <h:form enctype="multipart/form-data" class="container">
+                        <h:panelGrid columns="2">
+                            <h:outputLabel class="etiquetas" value="#{msj['formCategoria.nombre']}"></h:outputLabel>
+                            <h:selectOneMenu value="#{managedProducto.categoria.idcategoria}" >
+                                <!--Similar a la tabla en la que se lista todos los usuarios o categorías, se asigna un valor -->
+                                <f:selectItems value="#{managedCategoria.listarCategoria}" 
+                                               var="cat" 
+                                               itemLabel="#{cat.nombreCategoria}" 
+                                               itemValue="#{cat.idcategoria}"></f:selectItems>
+                            </h:selectOneMenu>
+                            <h:outputLabel class="container" value="#{msj['formProducto.nombre']}"></h:outputLabel>
+                            <h:inputText class="form-control"  value="#{managedProducto.producto.nombreProducto}"></h:inputText>
+                            <h:outputLabel class="container" value="#{msj['formProducto.imagen']}"></h:outputLabel>
+                            <p:fileUpload fileUploadListener="#{managedProducto.copiarImagen}" auto="true" allowTypes="/(gif|jpg|jpeg|GIF|JPG|JPEG|PNG|png)/"></p:fileUpload>
+                            <h:outputLabel class="container" value="#{msj['formProducto.descripcion']}"></h:outputLabel>
+                            <h:inputText class="form-control"  value="#{managedProducto.producto.descripcionProducto}"></h:inputText>
+                            <h:outputLabel class="container" value="#{msj['formProducto.precio']}"></h:outputLabel>
+                            <h:inputText class="form-control"  value="#{managedProducto.producto.precioUnitario}"></h:inputText>                            
+                            <h:outputLabel class="container" value="#{msj['formProducto.estado']}"></h:outputLabel>
+                            <h:inputText class="form-control"  value="#{managedProducto.producto.estadoProducto}"></h:inputText>
+                            <h:outputLabel class="container" value="#{msj['formProducto.stock']}"></h:outputLabel>
+                            <h:inputText class="form-control"  value="#{managedProducto.producto.stock}"></h:inputText>
+                            <center><h:commandButton class="btn btn-success" value="Guardar" actionListener="#{managedProducto.guardar()}" 
+                                                     action="listarProducto.xhtml"></h:commandButton></center>
+                        </h:panelGrid>
+                        
+                    </h:form>
+                        <h:link class="btn btn-primary" value="Return" outcome="/paginas/admindex.xhtml"></h:link>
+                        </div>
+                    </center>
+            </h:body>
+        </ui:define>
+    </ui:composition>
+</html>
+

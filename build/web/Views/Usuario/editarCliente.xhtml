@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"      
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+    <h:head>
+        <title>Add Category</title>
+    </h:head>
+    <ui:composition template="/template/plantillaAdmin.xhtml">
+        <ui:define name="left">            
+        </ui:define>
+        <ui:define name="content" >
+            <h:body class="totaltodo">
+             <center>
+                     <br></br> <br></br>
+                    <div class="card p-5" style="width: 50%;height: 50%;">
+                        <h2 class="h2title">Editar Cliente</h2>
+                        <h:form class="container">
+<!--              ID cliente está oculto-->
+        <h:inputHidden value="#{managedCliente.cliente.idcliente}"></h:inputHidden>
+            <h:panelGrid columns="3" >
+                 <h:outputLabel class="etiquetas" value="#{msj['formCliente.nombre']}"></h:outputLabel>
+                <h:inputText id="nombre" 
+                             value="#{managedCliente.cliente.nombreCliente}" 
+                             required="true" 
+                             requiredMessage="#{msj['formGeneral.obligatorio']}"></h:inputText>
+                <h:message for="nombre"></h:message>
+                <h:outputLabel class="etiquetas" value="#{msj['formCliente.direccion']}"></h:outputLabel>
+                <h:inputText id="direccion" 
+                             value="#{managedCliente.cliente.direccionCliente}"
+                             required="true" 
+                             requiredMessage="#{msj['formGeneral.obligatorio']}"></h:inputText>
+                <h:message for="direccion"></h:message>
+                <h:outputLabel class="etiquetas" value="#{msj['formCliente.email']}"></h:outputLabel>
+                <h:inputText id="email" 
+                             value="#{managedCliente.cliente.correoCliente}" 
+                             required="true" 
+                             requiredMessage="#{msj['formGeneral.obligatorio']}"></h:inputText>
+                <h:message for="email"></h:message>
+                <h:outputLabel class="etiquetas" value="#{msj['formCliente.telefono']}"></h:outputLabel>
+                <h:inputText id="telefono" 
+                             value="#{managedCliente.cliente.telefonoCliente}" 
+                             required="true" 
+                             requiredMessage="#{msj['formGeneral.obligatorio']}" 
+                             validatorMessage="Tiene que ingresar 9 números">
+                    <f:validateLength minimum="9"></f:validateLength>
+                </h:inputText>
+                <h:message for="telefono"></h:message>
+                <h:outputLabel class="etiquetas" value="#{msj['formCliente.password']}"></h:outputLabel>
+                <h:inputSecret id="pass" 
+                               value="#{managedCliente.cliente.passwordCliente}" 
+                               required="true" 
+                               requiredMessage="#{msj['formGeneral.obligatorio']}"></h:inputSecret>
+                <h:message for="pass"></h:message>
+                
+                 <h:outputLabel class="etiquetas" value="#{msj['formCliente.tipo']}"></h:outputLabel>
+                 <h:selectOneMenu  id="tipo" 
+                                   value="#{managedCliente.cliente.tipo}" 
+                                   required="true" 
+                                   requiredMessage="#{msj['formGeneral.obligatorio']}">
+                    <!--Similar a la tabla en la que se lista todos los usuarios o categorías, se asigna un valor -->
+                    <f:selectItem itemValue="1" itemLabel="Administrador"></f:selectItem>
+                    <f:selectItem itemValue="2" itemLabel="Cliente"></f:selectItem>
+                </h:selectOneMenu>
+                 <h:message for="tipo"></h:message>
+                 <center><br/><br/><h:commandButton class="btn btn-success" value="Modificar" 
+                                 actionListener="#{managedCliente.modificar()}" 
+                                 action="listarCliente.xhtml">
+                </h:commandButton></center><br/><br/>
+            </h:panelGrid>
+        </h:form>
+        <h:link value="Regresar" class="btn btn-primary" outcome="/paginas/admindex.xhtml"></h:link>
+                    </div>
+             </center>
+            </h:body>
+        </ui:define>
+    </ui:composition>
+</html>

@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <title>Facelet Title</title>
+        <f:event type="preRenderView" listener="#{managedUsuarios.obtenerSesion()}"> </f:event>
+    </h:head>
+
+    <ui:composition template="/template/plantillaAdmin.xhtml">
+        <ui:define name="left">            
+        </ui:define>
+
+
+        <ui:define name="content">
+            <center>
+                <br></br>
+                <h1 class="tit_menu">Bienvenido <h:outputText value="#{managedUsuarios.usuarios.nomusu}"></h:outputText></h1>
+                <h:form>
+                    <h:commandButton class="btn btn-light" value="Cerrar Sesion" actionListener="#{managedUsuarios.cerrarSesion()}"></h:commandButton>
+                </h:form>
+
+            </center>
+
+            <h:body class="principalad">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="card" style="width: 16rem;">
+                                <img src="../resources/img/categoria.jpg" class="card-img-top" height="180px" alt="..."></img>
+                                <div class="card-body ">
+                                    <h5 class="options">Módulo Categoría</h5>
+                                    <p class="card-text">CRUD Categoría</p>
+                                    <a href="../Views/Categoria/crearCategoria.xhtml" class="btn btn-success"><i class="fas fa-plus"> </i> Añadir</a>
+                                    <a href="../Views/Categoria/listarCategoria.xhtml" class="btn btn-primary"><i class="fas fa-clipboard-list"> </i> Listar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card" style="width: 16rem;">
+                                <img src="../resources/img/cliente.png" class="card-img-top" alt="..." height="180px"></img>
+                                <div class="card-body ">
+                                    <h5 class="options">Módulo Usuarios</h5>
+                                    <p class="card-text">CRUD Users</p>
+                                    <a href="../Views/Usuario/crearCliente.xhtml" class="btn btn-success"><i class="fas fa-plus"> </i> Añadir</a>
+                                    <a href="../Views/Usuario/listarCliente.xhtml" class="btn btn-primary"><i class="fas fa-clipboard-list"> </i> Listar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card" style="width: 16rem;">
+                                <img src="../resources/img/productos.jpg" class="card-img-top" alt="..." height="180px"></img>
+                                <div class="card-body ">
+                                    <h5 class="options">Módulo Producto</h5>
+                                    <p class="card-text">CRUD Producto</p>
+                                    <a href="../Views/Productos/crearProducto.xhtml" class="btn btn-success"><i class="fas fa-plus"> </i> Añadir</a>
+                                    <a href="../Views/Productos/listarProducto.xhtml" class="btn btn-primary"><i class="fas fa-clipboard-list"></i> Listar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card" style="width: 16rem;">
+                                <img src="../resources/img/tarjetas.jpg" class="card-img-top" alt="..." height="180px"></img>
+                                <div class="card-body ">
+                                    <h5 class="options">Módulo Tarjetas</h5>
+                                    <p class="card-text">CRUD Tarjetas</p>
+                                    <a href="../Views/Tarjetas/crearTarjeta.xhtml" class="btn btn-success"><i class="fas fa-plus"> </i> Añadir</a>
+                                    <a href="../Views/Tarjetas/listarTarjeta.xhtml" class="btn btn-primary"><i class="fas fa-clipboard-list"></i> Listar</a>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                                   
+                    </div>
+                </div>
+ <br/><br/><br/><br/><br/><br/>
+            </h:body>
+        </ui:define>
+    </ui:composition>
+
+</html>
+

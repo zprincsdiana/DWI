@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"      
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+    <h:head>
+        <title>Add Category</title>
+    </h:head>
+    <ui:composition template="/template/plantillaAdmin.xhtml">
+        <ui:define name="left">            
+        </ui:define>
+        <ui:define name="content" >
+            <h:body class="totaltodo">
+               <center>
+                     <br></br> <br></br>
+                    <div class="card p-5" style="width: 50%;height: 50%;">
+                        <h2 class="h2title">Editar Categoría</h2>
+                        <h:form class="container">
+                        <!--              ID Categoría está oculto-->
+                        <h:inputHidden value="#{managedTarjeta.tarjeta.idtarjeta}"></h:inputHidden>
+                        <h:panelGrid columns="2" >
+                            <h:outputLabel class="etiquetas" value="Nombre Cliente"></h:outputLabel>
+                            <h:selectOneMenu value="#{managedTarjeta.cliente.idcliente}" >
+                                <!--Similar a la tabla en la que se lista todos los usuarios o categorías, se asigna un valor -->
+                                <f:selectItems value="#{managedCliente.listaCliente}" 
+                                               var="cli" 
+                                               itemLabel="#{cli.nombreCliente}" 
+                                               itemValue="#{cli.idcliente}"></f:selectItems>
+                            </h:selectOneMenu>
+                            <h:outputLabel class="etiquetas" value="Nombre Tarjeta"></h:outputLabel>
+                            <h:inputText value="#{managedTarjeta.tarjeta.entidad}"></h:inputText>
+                            <h:outputLabel class="etiquetas" value="Fecha caducidad"></h:outputLabel>
+                            <h:inputText value="#{managedTarjeta.tarjeta.fechaCad}"></h:inputText>
+                            <h:outputLabel class="etiquetas" value="Código"></h:outputLabel>
+                            <h:inputText value="#{managedTarjeta.tarjeta.codigo}"></h:inputText>
+                            <center><h:commandButton class="btn btn-success" value="Modificar" 
+                                             actionListener="#{managedTarjeta.modificar()}" 
+                                             onclick="#{managedTarjeta.init()}"
+                                             action="listarTarjeta.xhtml">
+                                </h:commandButton></center>
+                        </h:panelGrid>
+                    </h:form>                    
+                        <h:link value="Regresar" class="btn btn-primary" outcome="/paginas/admindex.xhtml"></h:link>
+                    </div>
+                     
+               </center> <br/><br/><br/>
+            </h:body>
+        </ui:define>
+    </ui:composition>
+</html>
+

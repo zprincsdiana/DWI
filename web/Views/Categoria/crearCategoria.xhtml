@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"      
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+
+    <h:head>
+        <title>Crear Categoría</title>
+    </h:head>
+    <ui:composition template="/template/plantillaAdmin.xhtml">
+        <ui:define name="left">    
+
+        </ui:define>
+        <ui:define name="content" >
+            <h:body class="totaltodo">
+                <center>
+                    <br></br> <br></br>
+                    <div class="card p-5" style="width: 50%;height: 50%;">
+                        <h2 class="h2title">Agregar Categoría</h2>
+                        <h:form class="container">
+                            <h:panelGrid columns="2">
+                                <h:outputLabel  class="etiquetas"  for="exampleFormControlInput1" value="#{msj['formCategoria.nombre']}"></h:outputLabel>
+                                <h:inputText class="form-control"  value="#{managedCategoria.categoria.nombreCategoria}"></h:inputText>
+                                <h:outputLabel  class="etiquetas"  value="#{msj['formCategoria.descripcion']}"></h:outputLabel>
+                                <h:inputText class="form-control" value="#{managedCategoria.categoria.descripcionCategoria}"></h:inputText>
+                                <h:outputLabel  class="etiquetas" value="#{msj['formCategoria.imagen']}"></h:outputLabel>
+                                <h:inputText class="form-control" value="#{managedCategoria.categoria.imagenCategoria}"></h:inputText>
+                                <center>
+                                    <h:commandButton class="btn btn-success" value="Guardar" actionListener="#{managedCategoria.guardar()}" action="/Views/Categoria/listarCategoria.xhtml"></h:commandButton>
+                                </center>
+                            </h:panelGrid>
+
+                            <br></br>
+                        </h:form>
+
+                        <br></br>
+                        <h:link value="Regresar" class="btn btn-primary" outcome="/paginas/admindex.xhtml"></h:link>
+                       
+                    </div>
+                </center> <br/><br/><br/><br/><br/><br/>
+            </h:body>
+        </ui:define>
+    </ui:composition>
+</html>
+
